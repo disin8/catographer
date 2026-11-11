@@ -1,0 +1,96 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL, DEVELOPER, LEGAL_EFFECTIVE } from '../config';
+---
+<Layout title="Privacy Policy — Catographer" description="How Catographer handles information on your Apple device." path="privacy/">
+  <article class="px-4 pt-14 pb-10">
+    <div class="cg-card mx-auto max-w-3xl p-8 md:p-12 prose-legal">
+      <h1 class="text-3xl md:text-4xl font-semibold"><span data-lang-en>Privacy Policy for Catographer</span><span data-lang-ru>Политика конфиденциальности Catographer</span></h1>
+      <p class="text-sm mt-2"><span data-lang-en>Effective Date: {LEGAL_EFFECTIVE.en}</span><span data-lang-ru>Дата вступления в силу: {LEGAL_EFFECTIVE.ru}</span> · {DEVELOPER} · <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+
+      <div data-lang-en>
+        <p>This Privacy Policy explains how Catographer (“the App”) handles information on your Apple device.</p>
+        <h2>1. Who is responsible</h2>
+        <p>The developer, {DEVELOPER} (Lithuania), contact <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>, is the publisher of the App. Catographer is built to work on your device. We do not operate backend servers, user accounts, or a central database of walks, so we do not receive or store your walks, locations, photos or health data. Apple acts as an independent controller for its own services (see section 5).</p>
+        <h2>2. Privacy-first design</h2>
+        <p>We do not sell or share your data for advertising, marketing, or profiling. The App contains no advertising networks, analytics SDKs, or cross-app tracking.</p>
+        <h2>3. Information processed on your device</h2>
+        <p>Depending on the features you use, the App may process locally:</p>
+        <ul><li>GPS points and derived routes while you record a walk (precise location)</li><li>Steps and motion activity (when allowed)</li><li>Notes, moods, tags, photos, places, and settings you create</li><li>Workouts and routes you choose to import from, or save to, Apple Health</li></ul>
+        <p>Location, motion and health-related data are sensitive. We process them only on your device, only for the features you use, and only with the permission you give through iOS. You can withdraw any permission at any time in iOS Settings; related features will then stop working.</p>
+        <h2>4. What can leave your device</h2>
+        <p>By default, your routes stay on your iPhone. The only network use that is always on is map tiles from Apple Maps.</p>
+        <p>Optional features you turn on may send limited data:</p>
+        <ul>
+          <li><strong>iCloud sync</strong> — walks, notes and places go to your private iCloud (Apple). Photos stay on the device.</li>
+          <li><strong>Weather on walks</strong> — a rounded start coordinate is sent to Apple Weather. Weather data is provided by Apple Weather; see <a href="https://weatherkit.apple.com/legal-attribution.html" rel="noopener">Apple Weather legal attribution</a>.</li>
+          <li><strong>Suggest place names</strong> — stop coordinates, and one coordinate the first time you walk in a new area, are reverse-geocoded by Apple Maps. Off by default. Without it, areas stay unnamed.</li>
+          <li><strong>Walk suggestions</strong> — Motion (and Always location, if you allow it) stays on device to notice walking. The App never starts recording by itself.</li>
+          <li><strong>Sharing and export</strong> — posters, cards, GPX files and backups are created only when you ask, and go only where you send them.</li>
+        </ul>
+        <h2>5. Third parties</h2>
+        <p>Apple Maps, Apple Weather, Apple Health and iCloud/CloudKit are provided by Apple and governed by <a href="https://www.apple.com/legal/privacy/" rel="noopener">Apple’s Privacy Policy</a>. We do not control how Apple handles data in those services.</p>
+        <h2>6. Apple Watch and Apple Health</h2>
+        <p>When you allow it, Catographer can save walks you record to Apple Health as workouts with their routes (iPhone and Watch). Importing from Health keeps a private copy on this iPhone and does not change or delete anything in Health. Deleting a walk in Catographer never removes the workout from Health. Health data is never used for advertising or sold, and is not shared with third parties.</p>
+        <h2>7. App Lock</h2>
+        <p>If you enable App Lock, authentication uses Apple’s LocalAuthentication. Biometric templates and your device passcode are managed by iOS; Catographer never receives them.</p>
+        <h2>8. Retention and deletion</h2>
+        <p>Your data is kept on your device until you delete it. Deleting a walk, or deleting the App, removes the local copy; backups you exported and data in your iCloud are controlled by you and can be removed in Files or iCloud settings. Because we hold no copy of your data, we cannot recover it for you.</p>
+        <h2>9. Your rights</h2>
+        <p>Under the GDPR and similar laws you have the right to access, correct, delete, restrict, and port your data, and to withdraw consent. Because your data lives on your device, you exercise most of these directly in the App (editing, deleting, GPX export, backups). For any request, or if you believe your rights are violated, contact us at <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. You may also lodge a complaint with your local data protection authority; in Lithuania this is the State Data Protection Inspectorate (VDAI).</p>
+        <h2>10. California and other US states</h2>
+        <p>We do not sell or share personal information as defined by the CCPA/CPRA, and we do not use it for targeted advertising.</p>
+        <h2>11. Children</h2>
+        <p>Catographer is not directed to children under 4 (or the equivalent minimum age where you live), and we do not knowingly collect data from them.</p>
+        <h2>12. Crash reports</h2>
+        <p>Crash reports you opt into via Apple (Xcode Organizer / App Store) are handled by Apple.</p>
+        <h2>13. Changes to this policy</h2>
+        <p>We may update this policy. The effective date above shows the latest version, and material changes will be noted on this page and in the App’s release notes.</p>
+        <h2>14. Contact</h2>
+        <p>Questions about this policy: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+      </div>
+
+      <div data-lang-ru>
+        <p>Эта политика объясняет, как Catographer («Приложение») обращается с информацией на вашем устройстве Apple.</p>
+        <h2>1. Кто отвечает</h2>
+        <p>Издатель Приложения — {DEVELOPER} (Литва), контакт: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Catographer работает на вашем устройстве. У нас нет серверов, учётных записей и центральной базы прогулок, поэтому мы не получаем и не храним ваши прогулки, геолокацию, фото и данные о здоровье. Apple выступает самостоятельным оператором своих сервисов (см. раздел 5).</p>
+        <h2>2. Приватность по умолчанию</h2>
+        <p>Мы не продаём и не передаём ваши данные для рекламы, маркетинга или профилирования. В Приложении нет рекламных сетей, SDK аналитики и межприложенческого отслеживания.</p>
+        <h2>3. Данные, обрабатываемые на устройстве</h2>
+        <p>В зависимости от используемых функций Приложение может локально обрабатывать:</p>
+        <ul><li>GPS-точки и построенные по ним маршруты во время записи (точная геолокация)</li><li>Шаги и данные о движении (с вашего разрешения)</li><li>Заметки, настроения, теги, фото, места и настройки, которые вы создаёте</li><li>Тренировки и маршруты, которые вы импортируете из Apple Health или сохраняете в него</li></ul>
+        <p>Геолокация, данные о движении и здоровье — чувствительные. Мы обрабатываем их только на устройстве, только для нужных вам функций и только с разрешения, которое вы даёте через iOS. Любое разрешение можно отозвать в настройках iOS; связанные функции перестанут работать.</p>
+        <h2>4. Что может покидать устройство</h2>
+        <p>По умолчанию маршруты остаются на вашем iPhone. Всегда используются только тайлы карты Apple Maps.</p>
+        <p>Включаемые вами функции могут отправлять ограниченные данные:</p>
+        <ul>
+          <li><strong>Синхронизация iCloud</strong> — прогулки, заметки и места попадают в ваш приватный iCloud (Apple). Фото остаются на устройстве.</li>
+          <li><strong>Погода на прогулках</strong> — округлённая координата старта отправляется в Apple Weather. Данные о погоде предоставляет Apple Weather; см. <a href="https://weatherkit.apple.com/legal-attribution.html" rel="noopener">юридическую информацию Apple Weather</a>.</li>
+          <li><strong>Названия мест</strong> — координаты остановок и одна координата при первой прогулке в новом районе геокодируются Apple Maps. Выключено по умолчанию. Без этого районы остаются безымянными.</li>
+          <li><strong>Подсказки о прогулках</strong> — данные Motion (и «Всегда» для геолокации, если вы разрешили) обрабатываются на устройстве. Приложение никогда не начинает запись само.</li>
+          <li><strong>Поделиться и экспорт</strong> — постеры, карточки, файлы GPX и бэкапы создаются только по вашему запросу и попадают только туда, куда вы их отправите.</li>
+        </ul>
+        <h2>5. Третьи стороны</h2>
+        <p>Apple Maps, Apple Weather, Apple Health и iCloud/CloudKit предоставляет Apple, и они регулируются <a href="https://www.apple.com/legal/privacy/" rel="noopener">политикой конфиденциальности Apple</a>. Мы не контролируем, как Apple обрабатывает данные в этих сервисах.</p>
+        <h2>6. Apple Watch и Apple Health</h2>
+        <p>С вашего разрешения Catographer может сохранять записанные прогулки в Apple Health как тренировки с маршрутами (iPhone и Watch). Импорт из Health создаёт приватную копию на этом iPhone и ничего не меняет и не удаляет в Health. Удаление прогулки в Catographer не удаляет тренировку из Health. Данные Health не используются для рекламы, не продаются и не передаются третьим лицам.</p>
+        <h2>7. Блокировка приложения</h2>
+        <p>Если вы включите блокировку, аутентификация использует Apple LocalAuthentication. Биометрические данные и код-пароль управляются iOS; Catographer их не получает.</p>
+        <h2>8. Хранение и удаление</h2>
+        <p>Данные хранятся на вашем устройстве, пока вы их не удалите. Удаление прогулки или Приложения стирает локальную копию; экспортированные бэкапы и данные в вашем iCloud вы контролируете сами и можете удалить в «Файлах» или настройках iCloud. Так как копий ваших данных у нас нет, восстановить их мы не можем.</p>
+        <h2>9. Ваши права</h2>
+        <p>В соответствии с GDPR и аналогичными законами вы вправе получать доступ к данным, исправлять, удалять, ограничивать обработку, переносить данные и отзывать согласие. Поскольку данные находятся на вашем устройстве, большинство прав вы реализуете прямо в Приложении (редактирование, удаление, экспорт GPX, бэкапы). По любым вопросам или при нарушении ваших прав пишите на <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>. Вы также можете подать жалобу в местный орган по защите данных; в Литве это Государственная инспекция по защите данных (VDAI).</p>
+        <h2>10. Калифорния и другие штаты США</h2>
+        <p>Мы не продаём и не передаём персональные данные в значении CCPA/CPRA и не используем их для таргетированной рекламы.</p>
+        <h2>11. Дети</h2>
+        <p>Catographer не предназначен для детей младше 4 лет (или минимального возраста в вашей стране), и мы сознательно не собираем их данные.</p>
+        <h2>12. Отчёты о сбоях</h2>
+        <p>Отчёты о сбоях, на отправку которых вы согласились через Apple, обрабатываются Apple.</p>
+        <h2>13. Изменения политики</h2>
+        <p>Мы можем обновлять политику. Дата вступления в силу выше указывает на актуальную версию; существенные изменения будут отмечены на этой странице и в описании обновления.</p>
+        <h2>14. Контакты</h2>
+        <p>Вопросы по политике: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+      </div>
+    </div>
+  </article>
+</Layout>

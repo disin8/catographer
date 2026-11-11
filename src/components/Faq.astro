@@ -1,0 +1,28 @@
+---
+export const faqs = [
+  { q: ['Do I need an account?', 'Нужен ли аккаунт?'], a: ['No. Catographer has no accounts and no servers. Your walks live on your iPhone.', 'Нет. В Catographer нет аккаунтов и серверов. Ваши прогулки хранятся на iPhone.'] },
+  { q: ['Does it work offline?', 'Работает ли без интернета?'], a: ['Recording uses GPS and works without a connection. Map tiles come from Apple Maps, so unvisited areas may need a connection to display.', 'Запись использует GPS и работает без связи. Тайлы карты загружаются из Apple Maps, поэтому новым районам может понадобиться интернет.'] },
+  { q: ['Does it work with Apple Watch and Apple Health?', 'Есть ли Apple Watch и Apple Health?'], a: ['Yes. You can record on Apple Watch, and save walks to Apple Health as workouts with routes. Importing keeps a private copy and never changes Health data.', 'Да. Можно записывать с Apple Watch и сохранять прогулки в Apple Health как тренировки с маршрутом. Импорт создаёт приватную копию и не меняет данные Health.'] },
+  { q: ['Can I sync between devices or back up?', 'Можно ли синхронизировать и делать бэкап?'], a: ['Optional iCloud sync uses your private iCloud (photos stay on the device). Backups and GPX export are built in.', 'Опциональная синхронизация iCloud использует ваш приватный iCloud (фото остаются на устройстве). Бэкапы и экспорт GPX встроены.'] },
+  { q: ['Does it track me in the background?', 'Следит ли оно за мной в фоне?'], a: ['Only while you record. Optional walk suggestions only ask “Record this walk?” and never start recording on their own.', 'Только во время записи. Необязательные подсказки лишь спрашивают «Записать эту прогулку?» и никогда не начинают запись сами.'] },
+  { q: ['Which devices are supported?', 'Какие устройства поддерживаются?'], a: ['iPhone with iOS 18 or later, plus Apple Watch. The app is available in English and Russian.', 'iPhone с iOS 18 и новее, а также Apple Watch. Доступны английский и русский языки.'] },
+];
+const ld = { '@context': 'https://schema.org', '@type': 'FAQPage', mainEntity: faqs.map((f) => ({ '@type': 'Question', name: f.q[0], acceptedAnswer: { '@type': 'Answer', text: f.a[0] } })) };
+---
+<section id="faq" class="px-4 py-16">
+  <script type="application/ld+json" set:html={JSON.stringify(ld)} />
+  <div class="mx-auto max-w-3xl">
+    <h2 class="text-3xl md:text-4xl font-semibold text-center"><span data-lang-en>Questions</span><span data-lang-ru>Вопросы</span></h2>
+    <div class="mt-10 space-y-3">
+      {faqs.map((f) => (
+        <details class="cg-card group p-5" data-reveal>
+          <summary class="cursor-pointer list-none font-semibold flex justify-between gap-4">
+            <span><span data-lang-en>{f.q[0]}</span><span data-lang-ru>{f.q[1]}</span></span>
+            <span aria-hidden="true" class="transition-transform group-open:rotate-45">+</span>
+          </summary>
+          <p class="mt-3 text-[var(--ink-soft)] leading-relaxed"><span data-lang-en>{f.a[0]}</span><span data-lang-ru>{f.a[1]}</span></p>
+        </details>
+      ))}
+    </div>
+  </div>
+</section>

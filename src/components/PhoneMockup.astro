@@ -1,0 +1,53 @@
+---
+interface Props { variant?: 'record' | 'start' | 'diary'; class?: string; animate?: boolean }
+const { variant = 'record', class: cls = '', animate = true } = Astro.props;
+const route = 'M40 330 C 70 270, 120 300, 140 240 S 90 160, 150 120 S 230 130, 215 70';
+const labels = {
+  start: 'Illustration of the start screen',
+  diary: 'Illustration of a walk with photos on the route',
+  record: 'Illustration of a walk being recorded',
+};
+---
+<div class={`relative mx-auto w-[260px] aspect-[9/19] rounded-[2.6rem] border-[7px] border-[var(--ink)] bg-[var(--bg)] shadow-2xl overflow-hidden ${cls}`} role="img" aria-label={labels[variant]}>
+  <div class="absolute top-2 left-1/2 -translate-x-1/2 w-20 h-5 rounded-full bg-[var(--ink)] z-10"></div>
+  <div class="absolute inset-0" style="background: linear-gradient(160deg, #dcebf8 0%, #eef0fa 55%, #f8ecdd 100%)">
+    <svg viewBox="0 0 260 420" class="absolute inset-0 w-full h-full" aria-hidden="true">
+      <g stroke="#ffffff" stroke-width="10" fill="none" opacity=".7" stroke-linecap="round">
+        <path d="M-10 90 L270 140" /><path d="M30 -10 L90 430" /><path d="M-10 300 L270 260" /><path d="M190 -10 L230 430" />
+      </g>
+      <ellipse cx="60" cy="60" rx="46" ry="30" fill="#bfe0c9" opacity=".55" />
+      <path d={route} pathLength="1" fill="none" stroke="#7a70b8" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" class="route-draw" />
+      <circle cx="40" cy="330" r="7" fill="#fff" stroke="#7a70b8" stroke-width="3" />
+      {variant !== 'start' && !animate && <circle cx="215" cy="70" r="8" fill="#7a70b8" stroke="#fff" stroke-width="3" />}
+      {variant !== 'start' && animate && (
+        <g>
+          <circle r="14" fill="#7a70b8" opacity=".25" class="walker-pulse"><animateMotion dur="9s" repeatCount="indefinite" path={route} /></circle>
+          <circle r="8" fill="#7a70b8" stroke="#fff" stroke-width="3"><animateMotion dur="9s" repeatCount="indefinite" path={route} /></circle>
+        </g>
+      )}
+      {variant === 'diary' && (
+        <g>
+          <rect x="118" y="200" width="34" height="34" rx="8" fill="#f5e0c7" stroke="#fff" stroke-width="3" />
+          <rect x="165" y="100" width="34" height="34" rx="8" fill="#d6ccf0" stroke="#fff" stroke-width="3" />
+        </g>
+      )}
+    </svg>
+    {variant === 'start' ? (
+      <div class="absolute bottom-0 inset-x-0 p-4 rounded-t-3xl bg-white/85 backdrop-blur text-[#2e3d52]">
+        <div class="flex items-center gap-2 text-[11px] font-bold mb-3"><span class="w-2 h-2 rounded-full bg-emerald-500"></span>GPS · Good signal</div>
+        <div class="grid grid-cols-3 gap-1 text-[11px] font-bold text-center mb-3">
+          <span class="py-1.5 rounded-full bg-[#2e3d52] text-white">Walk</span><span class="py-1.5 rounded-full bg-black/5">Hike</span><span class="py-1.5 rounded-full bg-black/5">Run</span>
+        </div>
+        <div class="py-3 rounded-full bg-[#7a70b8] text-white text-center text-sm font-bold">Start walk</div>
+      </div>
+    ) : (
+      <div class="absolute bottom-0 inset-x-0 p-4 rounded-t-3xl bg-white/85 backdrop-blur text-[#2e3d52]">
+        <div class="grid grid-cols-3 text-center">
+          <div><p class="text-[10px] font-semibold opacity-60">Time</p><p class="font-display font-semibold">42:10</p></div>
+          <div><p class="text-[10px] font-semibold opacity-60">Distance</p><p class="font-display font-semibold">3.2 km</p></div>
+          <div><p class="text-[10px] font-semibold opacity-60">Pace</p><p class="font-display font-semibold">13:10</p></div>
+        </div>
+      </div>
+    )}
+  </div>
+</div>

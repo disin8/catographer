@@ -1,0 +1,25 @@
+---
+import Icon from './Icon.astro';
+const items = [
+  { icon: 'map', en: ['Live recording, made easy', 'A clear start screen with GPS signal, Walk / Hike / Run and a 3-2-1 countdown. Auto-pause and a battery saver keep long walks smooth.'], ru: ['Запись без хлопот', 'Понятный экран старта: сигнал GPS, Прогулка / Поход / Бег и отсчёт 3-2-1. Автопауза и экономия заряда для долгих маршрутов.'] },
+  { icon: 'image', en: ['Photos & moments on the route', 'Pin photos, notes, mood and tags exactly where they happened, then share a clean card or poster.'], ru: ['Фото и моменты на маршруте', 'Закрепляйте фото, заметки, настроение и теги там, где всё случилось, и делитесь аккуратной карточкой или постером.'] },
+  { icon: 'earth', en: ['Your month and year map', 'See every route on one map, explored areas and neighbourhood coverage, plus a year poster.'], ru: ['Карта месяца и года', 'Все маршруты на одной карте, исследованные районы и охват кварталов, плюс постер года.'] },
+  { icon: 'compass', en: ['Places & search', 'Find a walk by word, period or area. Frequent stops and return routes are noticed for you.'], ru: ['Места и поиск', 'Находите прогулки по слову, периоду или району. Частые остановки и возвраты замечаются автоматически.'] },
+  { icon: 'bolt', en: ['Watch, Live Activity & Siri', 'Record from Apple Watch, follow along in the Dynamic Island, and say “Start a walk” to Siri.'], ru: ['Watch, Live Activity и Siri', 'Записывайте с Apple Watch, следите в Dynamic Island и скажите Siri «Начать прогулку».'] },
+  { icon: 'shield-check', en: ['Apple Health, your way', 'Save walks as workouts with routes and import existing ones. No steps or energy are written.'], ru: ['Apple Health на ваших условиях', 'Сохраняйте прогулки как тренировки с маршрутом и импортируйте существующие. Шаги и энергия не записываются.'] },
+];
+---
+<section id="features" class="px-4 py-16">
+  <div class="mx-auto max-w-5xl">
+    <h2 class="text-3xl md:text-4xl font-semibold text-center"><span data-lang-en>Made for remembering, not ranking</span><span data-lang-ru>Чтобы помнить, а не соревноваться</span></h2>
+    <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
+      {items.map((i) => (
+        <article class="cg-card lift p-6" data-reveal>
+          <span class="w-11 h-11 grid place-items-center rounded-2xl bg-[var(--lilac)] text-[#2e3d52]"><Icon name={i.icon} class="w-5 h-5" /></span>
+          <h3 class="mt-4 text-lg font-semibold"><span data-lang-en>{i.en[0]}</span><span data-lang-ru>{i.ru[0]}</span></h3>
+          <p class="mt-2 text-sm leading-relaxed text-[var(--ink-soft)]"><span data-lang-en>{i.en[1]}</span><span data-lang-ru>{i.ru[1]}</span></p>
+        </article>
+      ))}
+    </div>
+  </div>
+</section>

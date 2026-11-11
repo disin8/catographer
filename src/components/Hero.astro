@@ -1,0 +1,87 @@
+---
+import DownloadButton from './DownloadButton.astro';
+import PhoneMockup from './PhoneMockup.astro';
+import Icon from './Icon.astro';
+const tabs = [
+  { id: 'start', en: 'Start', ru: 'Старт' },
+  { id: 'record', en: 'Record', ru: 'Запись' },
+  { id: 'diary', en: 'Diary', ru: 'Дневник' },
+];
+---
+<section class="px-4 pt-16 md:pt-24 pb-10">
+  <div class="mx-auto max-w-5xl grid md:grid-cols-2 gap-12 items-center">
+    <div data-reveal>
+      <span class="cg-pill"><Icon name="lock" class="w-3.5 h-3.5" />
+        <span data-lang-en>Private · No account · No ads</span><span data-lang-ru>Приватно · Без аккаунта · Без рекламы</span>
+      </span>
+      <h1 class="mt-5 text-5xl md:text-6xl font-semibold leading-[1.05]">
+        <span data-lang-en>Every walk, a quiet line on your map.</span>
+        <span data-lang-ru>Каждая прогулка — тихая линия на вашей карте.</span>
+      </h1>
+      <p class="mt-5 text-lg text-[var(--ink-soft)] max-w-md">
+        <span data-lang-en>Catographer is a calm, private walking diary. Record a route, pin photos and moments to it, and watch your city fill in — not steps, not calories.</span>
+        <span data-lang-ru>Catographer — спокойный приватный дневник прогулок. Записывайте маршрут, закрепляйте на нём фото и моменты и смотрите, как заполняется ваш город — без шагов и калорий.</span>
+      </p>
+      <div class="mt-8 flex flex-wrap items-center gap-4">
+        <DownloadButton />
+        <p class="text-sm text-[var(--ink-soft)]">iPhone · iOS 18+ · Apple Watch</p>
+      </div>
+    </div>
+
+    <div id="screens" data-tilt data-reveal>
+      <div role="tablist" aria-label="App screens" class="mx-auto mb-6 flex w-fit rounded-full border border-[var(--border)] bg-[var(--bg-card)] p-1 text-sm font-semibold">
+        {tabs.map((t, i) => (
+          <button type="button" role="tab" id={`tab-${t.id}`} aria-controls={`panel-${t.id}`} aria-selected={i === 1 ? 'true' : 'false'} tabindex={i === 1 ? 0 : -1} data-tab={t.id}
+            class="px-4 py-1.5 rounded-full transition-colors aria-selected:bg-[var(--ink)] aria-selected:text-[var(--bg)]">
+            <span data-lang-en>{t.en}</span><span data-lang-ru>{t.ru}</span>
+          </button>
+        ))}
+      </div>
+      <div class="tilt-inner">
+        <div id="panel-start" role="tabpanel" aria-labelledby="tab-start" hidden><PhoneMockup variant="start" /></div>
+        <div id="panel-record" role="tabpanel" aria-labelledby="tab-record"><PhoneMockup variant="record" /></div>
+        <div id="panel-diary" role="tabpanel" aria-labelledby="tab-diary" hidden><PhoneMockup variant="diary" /></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  const tabs = Array.from(document.querySelectorAll<HTMLButtonElement>('[role="tab"][data-tab]'));
+  const order = tabs.map((t) => t.dataset.tab!);
+  let timer: number | undefined;
+  const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  function select(id: string, focus = false) {
+    tabs.forEach((t) => {
+      const on = t.dataset.tab === id;
+      t.setAttribute('aria-selected', String(on));
+      t.tabIndex = on ? 0 : -1;
+      if (on && focus) t.focus();
+      const panel = document.getElementById(`panel-${t.dataset.tab}`);
+      if (panel) panel.hidden = !on;
+    });
+  }
+  function stopAuto() { if (timer) { clearInterval(timer); timer = undefined; } }
+  function startAuto() {
+    if (reduce) return;
+    stopAuto();
+    timer = window.setInterval(() => {
+      const cur = tabs.findIndex((t) => t.getAttribute('aria-selected') === 'true');
+      select(order[(cur + 1) % order.length]);
+    }, 5000);
+  }
+  tabs.forEach((t, i) => {
+    t.addEventListener('click', () => { stopAuto(); select(t.dataset.tab!); });
+    t.addEventListener('keydown', (e) => {
+      let n = -1;
+      if (e.key === 'ArrowRight') n = (i + 1) % tabs.length;
+      else if (e.key === 'ArrowLeft') n = (i - 1 + tabs.length) % tabs.length;
+      if (n >= 0) { e.preventDefault(); stopAuto(); select(order[n], true); }
+    });
+  });
+  const screens = document.getElementById('screens');
+  screens?.addEventListener('mouseenter', stopAuto);
+  screens?.addEventListener('mouseleave', startAuto);
+  startAuto();
+</script>

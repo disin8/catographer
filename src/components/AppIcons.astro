@@ -1,0 +1,23 @@
+---
+const base = import.meta.env.BASE_URL;
+const icons = [
+  { id: 'dawn', src: 'dawn.png', en: 'Dawn', ru: 'Рассвет' },
+  { id: 'night', src: 'night.png', en: 'Night', ru: 'Ночь' },
+  { id: 'scout', src: 'scout.png', en: 'Scout', ru: 'Скаут' },
+  { id: 'trail', src: 'trail.png', en: 'Trail', ru: 'Тропа' },
+];
+---
+<section class="px-4 py-16">
+  <div class="mx-auto max-w-4xl text-center">
+    <h2 class="text-3xl md:text-4xl font-semibold"><span data-lang-en>Four icons, light &amp; dark</span><span data-lang-ru>Четыре иконки, светлая и тёмная тема</span></h2>
+    <p class="mt-4 text-[var(--ink-soft)]"><span data-lang-en>Pick the one that feels like your walk — and let the app follow your system appearance.</span><span data-lang-ru>Выберите ту, что похожа на вашу прогулку, а приложение подстроится под тему системы.</span></p>
+    <ul class="mt-10 flex flex-wrap justify-center gap-8">
+      {icons.map((i) => (
+        <li class="text-center transition-transform hover:-translate-y-1 hover:rotate-3" data-reveal>
+          <img src={`${base}assets/images/${i.src}`} alt={`${i.en} app icon`} width="96" height="96" loading="lazy" class="rounded-[22px] shadow-lg" />
+          <p class="mt-3 text-sm font-semibold"><span data-lang-en>{i.en}</span><span data-lang-ru>{i.ru}</span></p>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>

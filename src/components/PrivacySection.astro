@@ -1,0 +1,40 @@
+---
+import Icon from './Icon.astro';
+const rows = [
+  { en: 'Account required', ru: 'Нужен аккаунт', a: false, b: true },
+  { en: 'Ads or analytics SDKs', ru: 'Реклама и аналитика', a: false, b: true },
+  { en: 'Routes stored on your iPhone', ru: 'Маршруты хранятся на iPhone', a: true, b: false },
+  { en: 'Optional private iCloud sync', ru: 'Приватная синхронизация iCloud по желанию', a: true, b: false },
+  { en: 'Sells or shares data for advertising', ru: 'Продаёт данные для рекламы', a: false, b: true },
+];
+---
+<section id="privacy" class="px-4 py-16">
+  <div class="mx-auto max-w-4xl">
+    <h2 class="text-3xl md:text-4xl font-semibold text-center"><span data-lang-en>Your walks stay yours</span><span data-lang-ru>Ваши прогулки остаются вашими</span></h2>
+    <p class="mt-4 text-center text-[var(--ink-soft)] max-w-xl mx-auto"><span data-lang-en>No servers, no profile, no feed. Only map tiles from Apple Maps are always on; everything else is opt-in.</span><span data-lang-ru>Без серверов, профиля и ленты. Всегда включены только тайлы Apple Maps; остальное — по вашему выбору.</span></p>
+    <div class="cg-card mt-10 overflow-hidden" data-reveal>
+      <table class="w-full text-sm">
+        <thead><tr class="text-left text-[var(--ink-soft)]">
+          <th scope="col" class="p-4"></th>
+          <th scope="col" class="p-4 font-bold">Catographer</th>
+          <th scope="col" class="p-4 font-bold"><span data-lang-en>Typical fitness apps</span><span data-lang-ru>Типичные фитнес-приложения</span></th>
+        </tr></thead>
+        <tbody>
+          {rows.map((r) => (
+            <tr class="border-t border-[var(--border)]">
+              <th scope="row" class="p-4 font-medium text-left"><span data-lang-en>{r.en}</span><span data-lang-ru>{r.ru}</span></th>
+              <td class="p-4"><Icon name={r.a ? 'check' : 'xmark'} class="w-4 h-4" title={r.a ? 'Yes' : 'No'} /></td>
+              <td class="p-4 text-[var(--ink-soft)]"><Icon name={r.b ? 'check' : 'xmark'} class="w-4 h-4" title={r.b ? 'Often' : 'No'} /></td>
+            </tr>
+          ))}
+        </tbody>
+      </table>
+    </div>
+    <p class="mt-3 text-xs text-center text-[var(--ink-soft)]"><span data-lang-en>Comparison is a general illustration of common industry practice, not of any specific app.</span><span data-lang-ru>Сравнение — общая иллюстрация распространённой практики, а не конкретного приложения.</span></p>
+    <div class="mt-8 flex flex-wrap justify-center gap-3">
+      <span class="cg-pill"><Icon name="lock" class="w-3.5 h-3.5" />App Lock · Face ID</span>
+      <span class="cg-pill"><Icon name="share" class="w-3.5 h-3.5" />GPX import &amp; export</span>
+      <span class="cg-pill"><Icon name="shield-check" class="w-3.5 h-3.5" /><span data-lang-en>Automatic backups</span><span data-lang-ru>Автобэкапы</span></span>
+    </div>
+  </div>
+</section>

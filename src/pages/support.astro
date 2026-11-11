@@ -1,0 +1,33 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL, url } from '../config';
+---
+<Layout title="Support — Catographer" description="Help with recording, sync, backups and Apple Watch for Catographer." path="support/">
+  <article class="px-4 pt-14 pb-10">
+    <div class="cg-card mx-auto max-w-3xl p-8 md:p-12 prose-legal">
+      <h1 class="text-3xl md:text-4xl font-semibold"><span data-lang-en>Catographer Support</span><span data-lang-ru>Поддержка Catographer</span></h1>
+      <div data-lang-en>
+        <p>Need help with recording, sync, backups, or Apple Watch? Email <a href={`mailto:${CONTACT_EMAIL}?subject=Catographer%20support`}>{CONTACT_EMAIL}</a> and include:</p>
+        <ul><li>App version (Settings → About)</li><li>iPhone / Watch model and iOS / watchOS version</li><li>What you expected, and what happened</li></ul>
+        <h2>Quick tips</h2>
+        <ul>
+          <li><strong>Backups</strong> — Settings → Back up now. Files live in On My iPhone → Catographer → Backups.</li>
+          <li><strong>iCloud sync</strong> — opt-in in Settings; changes appear when the app opens.</li>
+          <li><strong>Walk suggestions</strong> — optional; asks “Record this walk?” and never starts recording alone. Needs Motion; background nudges need Location → Always.</li>
+        </ul>
+        <p>See also the <a href={url('privacy/')}>Privacy Policy</a> and <a href={url('terms/')}>Terms of Use</a>.</p>
+      </div>
+      <div data-lang-ru>
+        <p>Нужна помощь с записью, синхронизацией, бэкапами или Apple Watch? Напишите на <a href={`mailto:${CONTACT_EMAIL}?subject=Catographer%20support`}>{CONTACT_EMAIL}</a> и укажите:</p>
+        <ul><li>Версию приложения (Настройки → О приложении)</li><li>Модель iPhone / Watch и версию iOS / watchOS</li><li>Что вы ожидали и что произошло</li></ul>
+        <h2>Быстрые советы</h2>
+        <ul>
+          <li><strong>Бэкапы</strong> — Настройки → Создать копию. Файлы лежат в «На iPhone» → Catographer → Backups.</li>
+          <li><strong>Синхронизация iCloud</strong> — включается в настройках; изменения появляются при открытии приложения.</li>
+          <li><strong>Подсказки о прогулках</strong> — необязательны; спрашивают «Записать эту прогулку?» и никогда не начинают запись сами. Нужен доступ к Motion; фоновые напоминания требуют геолокации «Всегда».</li>
+        </ul>
+        <p>См. также <a href={url('privacy/')}>Политику конфиденциальности</a> и <a href={url('terms/')}>Условия использования</a>.</p>
+      </div>
+    </div>
+  </article>
+</Layout>

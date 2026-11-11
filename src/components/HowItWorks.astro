@@ -1,0 +1,25 @@
+---
+import PhoneMockup from './PhoneMockup.astro';
+const steps = [
+  { n: '1', en: ['Start', 'Check GPS, pick Walk, Hike or Run, and tap start.'], ru: ['Старт', 'Проверьте GPS, выберите Прогулка, Поход или Бег и нажмите старт.'] },
+  { n: '2', en: ['Walk', 'Keep the phone in your pocket. Catographer draws the line.'], ru: ['Идите', 'Держите телефон в кармане. Catographer рисует линию.'] },
+  { n: '3', en: ['Remember', 'Add photos, a mood and a note. Your diary and map grow.'], ru: ['Запомните', 'Добавьте фото, настроение и заметку. Дневник и карта растут.'] },
+];
+---
+<section class="px-4 py-16">
+  <div class="mx-auto max-w-5xl grid md:grid-cols-2 gap-12 items-center">
+    <PhoneMockup variant="diary" />
+    <div>
+      <h2 class="text-3xl md:text-4xl font-semibold"><span data-lang-en>Three taps to a memory</span><span data-lang-ru>Три касания до воспоминания</span></h2>
+      <ol class="mt-8 space-y-6">
+        {steps.map((s) => (
+          <li class="flex gap-4" data-reveal>
+            <span class="shrink-0 w-10 h-10 grid place-items-center rounded-full bg-[var(--ink)] text-[var(--bg)] font-bold">{s.n}</span>
+            <div><h3 class="font-semibold text-lg"><span data-lang-en>{s.en[0]}</span><span data-lang-ru>{s.ru[0]}</span></h3>
+            <p class="text-[var(--ink-soft)]"><span data-lang-en>{s.en[1]}</span><span data-lang-ru>{s.ru[1]}</span></p></div>
+          </li>
+        ))}
+      </ol>
+    </div>
+  </div>
+</section>

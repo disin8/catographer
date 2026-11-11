@@ -1,0 +1,33 @@
+---
+import Icon from './Icon.astro';
+import DownloadButton from './DownloadButton.astro';
+import { url } from '../config';
+const links = [
+  { href: url('#features'), en: 'Features', ru: 'Возможности' },
+  { href: url('#privacy'), en: 'Privacy', ru: 'Приватность' },
+  { href: url('#faq'), en: 'FAQ', ru: 'Вопросы' },
+  { href: url('support/'), en: 'Support', ru: 'Поддержка' },
+];
+---
+<header class="sticky top-3 z-50 px-3">
+  <div class="cg-card mx-auto max-w-5xl flex items-center justify-between gap-3 !rounded-full px-4 py-2.5">
+    <a href={url()} class="flex items-center gap-2 font-display font-semibold text-lg" aria-label="Catographer">
+      <img src={`${import.meta.env.BASE_URL}assets/images/app-icon.png`} alt="" width="30" height="30" class="rounded-[9px]" />
+      Catographer
+    </a>
+    <nav class="hidden md:flex items-center gap-6 text-sm font-semibold text-[var(--ink-soft)]" aria-label="Main">
+      {links.map((l) => (
+        <a href={l.href} class="hover:text-[var(--ink)] transition-colors"><span data-lang-en>{l.en}</span><span data-lang-ru>{l.ru}</span></a>
+      ))}
+    </nav>
+    <div class="flex items-center gap-2">
+      <div class="flex rounded-full border border-[var(--border)] p-0.5 text-xs font-bold" role="group" aria-label="Language">
+        <button type="button" data-lang-btn="en" aria-pressed="true" class="px-2.5 py-1 rounded-full aria-pressed:bg-[var(--ink)] aria-pressed:text-[var(--bg)]">EN</button>
+        <button type="button" data-lang-btn="ru" aria-pressed="false" class="px-2.5 py-1 rounded-full aria-pressed:bg-[var(--ink)] aria-pressed:text-[var(--bg)]">RU</button>
+      </div>
+      <button type="button" data-theme-btn aria-pressed="false" aria-label="Toggle dark mode" class="w-9 h-9 grid place-items-center rounded-full border border-[var(--border)]">
+        <Icon name="dark-light" class="w-4 h-4" />
+      </button>
+    </div>
+  </div>
+</header>

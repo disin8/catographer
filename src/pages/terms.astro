@@ -1,0 +1,76 @@
+---
+import Layout from '../layouts/Layout.astro';
+import { CONTACT_EMAIL, DEVELOPER, LEGAL_EFFECTIVE } from '../config';
+---
+<Layout title="Terms of Use — Catographer" description="Terms of Use (EULA) for the Catographer iOS and watchOS applications." path="terms/">
+  <article class="px-4 pt-14 pb-10">
+    <div class="cg-card mx-auto max-w-3xl p-8 md:p-12 prose-legal">
+      <h1 class="text-3xl md:text-4xl font-semibold"><span data-lang-en>Terms of Use (EULA) for Catographer</span><span data-lang-ru>Условия использования (EULA) Catographer</span></h1>
+      <p class="text-sm mt-2"><span data-lang-en>Effective Date: {LEGAL_EFFECTIVE.en}</span><span data-lang-ru>Дата вступления в силу: {LEGAL_EFFECTIVE.ru}</span> · {DEVELOPER} · <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a></p>
+
+      <div data-lang-en>
+        <p>These Terms govern your use of the Catographer iOS and watchOS applications (“the App”). By using the App you also agree to Apple’s standard <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">Licensed Application End User License Agreement</a>. If you do not agree, do not use the App.</p>
+        <h2>1. License</h2>
+        <p>{DEVELOPER} grants you a limited, non-exclusive, non-transferable, revocable license to use the App on Apple devices you own or control, for personal, non-commercial use, subject to these Terms and the Apple Usage Rules.</p>
+        <h2>2. Nature of the App</h2>
+        <p>Catographer is a private walking diary. Distances, durations, explored areas, weather and related statistics are estimates based on device sensors, Apple services and the data you record or import, and may be inaccurate. The App is not intended for legal, medical, emergency, or navigation-critical use.</p>
+        <h2>3. Your safety</h2>
+        <p>You are solely responsible for your safety and the safety of others when walking, hiking or running. Do not use the App in a way that distracts you from your surroundings, traffic, terrain or weather. Choose routes and conditions suited to your ability, carry means of calling for help, and obey local laws and access rules. The App does not provide turn-by-turn navigation or emergency features and must not be relied on to find your way or to be found.</p>
+        <h2>4. Health disclaimer</h2>
+        <p>The App is not a medical device and does not provide medical advice, diagnosis or treatment. Consult a qualified professional before starting or changing any physical activity. Any workout data saved to Apple Health is provided as-is.</p>
+        <h2>5. User content and backups</h2>
+        <p>You retain rights in walks, notes, photos, and other content you create. The App processes that content on your device (and, if you enable iCloud sync, in your private iCloud). You are responsible for backups. Uninstalling the App, changing devices or deleting data may permanently remove local content, and we cannot recover it. You grant us no license to your content, as we do not receive it.</p>
+        <h2>6. Acceptable use</h2>
+        <p>You agree not to copy, modify, reverse engineer, decompile, or create derivative works of the App, to remove proprietary notices, to circumvent its technical protections, or to use it unlawfully, except where such restrictions are prohibited by applicable law.</p>
+        <h2>7. Intellectual property</h2>
+        <p>The App, its design, code, name and icons are owned by {DEVELOPER} and protected by intellectual property laws. No rights are granted except the license in section 1. Map data and weather are provided by Apple and remain subject to Apple’s terms.</p>
+        <h2>8. Third-party services</h2>
+        <p>Optional features may use Apple Maps, Apple Weather, Apple Health, and CloudKit/iCloud. Those services are governed by their own terms and privacy policies, and we are not responsible for their availability or accuracy.</p>
+        <h2>9. Disclaimer and limitation of liability</h2>
+        <p>The App is provided “as is” and “as available.” To the maximum extent permitted by law, {DEVELOPER} disclaims all warranties, including merchantability, fitness for a particular purpose, accuracy, and uninterrupted or error-free operation, and is not liable for indirect, incidental or consequential damages, loss of data, or injury or loss arising from your use of the App or from reliance on its information. Nothing in these Terms excludes liability that cannot be excluded by law, including for death or personal injury caused by negligence, fraud, or mandatory consumer rights.</p>
+        <h2>10. Termination</h2>
+        <p>These Terms apply until terminated. Your license ends automatically if you breach them. You may stop at any time by deleting the App.</p>
+        <h2>11. Changes</h2>
+        <p>We may update these Terms or the App. The effective date above shows the latest version; continued use after an update means you accept it.</p>
+        <h2>12. Apple</h2>
+        <p>These Terms are between you and {DEVELOPER}, not Apple. Apple has no obligation to provide maintenance or support for the App, and is not responsible for claims relating to it. Apple and its subsidiaries are third-party beneficiaries of these Terms and may enforce them against you.</p>
+        <h2>13. Governing law and disputes</h2>
+        <p>These Terms are governed by the laws of the Republic of Lithuania. Disputes shall be submitted to the competent courts of Lithuania, except where mandatory consumer-protection laws of your country of residence give you the right to bring claims in your home courts or provide additional rights.</p>
+        <h2>14. Contact</h2>
+        <p>Support and notices: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+      </div>
+
+      <div data-lang-ru>
+        <p>Настоящие Условия регулируют использование приложений Catographer для iOS и watchOS («Приложение»). Используя Приложение, вы также соглашаетесь со стандартным <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" rel="noopener">лицензионным соглашением Apple</a>. Если вы не согласны, не используйте Приложение.</p>
+        <h2>1. Лицензия</h2>
+        <p>{DEVELOPER} предоставляет вам ограниченную, неисключительную, непередаваемую, отзывную лицензию на использование Приложения на принадлежащих вам устройствах Apple в личных, некоммерческих целях в соответствии с настоящими Условиями и правилами использования Apple.</p>
+        <h2>2. Характер Приложения</h2>
+        <p>Catographer — приватный дневник прогулок. Расстояния, длительность, исследованные районы, погода и другая статистика — оценки на основе датчиков устройства, сервисов Apple и данных, которые вы записываете или импортируете, и могут быть неточными. Приложение не предназначено для юридических, медицинских, экстренных целей или критичной навигации.</p>
+        <h2>3. Ваша безопасность</h2>
+        <p>Вы самостоятельно отвечаете за свою безопасность и безопасность других во время прогулок, походов и бега. Не используйте Приложение так, чтобы оно отвлекало вас от окружающей обстановки, дорожного движения, рельефа или погоды. Выбирайте маршруты и условия по своим силам, имейте при себе средство связи для вызова помощи и соблюдайте местные законы и правила доступа. Приложение не предоставляет пошаговую навигацию и экстренные функции, и на него нельзя полагаться, чтобы найти дорогу или быть найденным.</p>
+        <h2>4. Медицинский отказ от ответственности</h2>
+        <p>Приложение не является медицинским изделием и не даёт медицинских советов, диагнозов или лечения. Перед началом или изменением физической активности проконсультируйтесь с квалифицированным специалистом. Данные тренировок, сохранённые в Apple Health, предоставляются «как есть».</p>
+        <h2>5. Пользовательский контент и резервные копии</h2>
+        <p>Права на прогулки, заметки, фото и другой созданный вами контент остаются за вами. Приложение обрабатывает его на устройстве (и в вашем приватном iCloud, если вы включили синхронизацию). Резервные копии — ваша ответственность. Удаление Приложения, смена устройства или удаление данных могут безвозвратно стереть локальный контент, и мы не сможем его восстановить. Лицензии на ваш контент вы нам не предоставляете, так как мы его не получаем.</p>
+        <h2>6. Допустимое использование</h2>
+        <p>Вы соглашаетесь не копировать, не изменять, не декомпилировать и не дизассемблировать Приложение, не создавать производные работы, не удалять уведомления об авторских правах, не обходить технические средства защиты и не использовать Приложение незаконно, за исключением случаев, когда такие ограничения запрещены законом.</p>
+        <h2>7. Интеллектуальная собственность</h2>
+        <p>Приложение, его дизайн, код, название и иконки принадлежат {DEVELOPER} и защищены законами об интеллектуальной собственности. Права, кроме лицензии из раздела 1, не предоставляются. Данные карт и погоды предоставляет Apple, и на них распространяются условия Apple.</p>
+        <h2>8. Сторонние сервисы</h2>
+        <p>Необязательные функции могут использовать Apple Maps, Apple Weather, Apple Health и CloudKit/iCloud. Эти сервисы регулируются собственными условиями и политиками конфиденциальности, и мы не отвечаем за их доступность и точность.</p>
+        <h2>9. Отказ от гарантий и ограничение ответственности</h2>
+        <p>Приложение предоставляется «как есть» и «по мере доступности». В максимально допустимой законом степени {DEVELOPER} отказывается от любых гарантий, включая пригодность для продажи, соответствие определённой цели, точность и бесперебойную работу, и не отвечает за косвенный, случайный или сопутствующий ущерб, потерю данных, а также вред или убытки, возникшие из-за использования Приложения или опоры на его информацию. Ничто в Условиях не исключает ответственность, которую нельзя исключить по закону, включая смерть или вред здоровью по неосторожности, мошенничество и обязательные права потребителей.</p>
+        <h2>10. Прекращение</h2>
+        <p>Условия действуют до их прекращения. Лицензия автоматически прекращается при нарушении Условий. Вы можете прекратить использование в любой момент, удалив Приложение.</p>
+        <h2>11. Изменения</h2>
+        <p>Мы можем обновлять Условия и Приложение. Дата вступления в силу выше указывает на актуальную версию; продолжая использование после обновления, вы принимаете его.</p>
+        <h2>12. Apple</h2>
+        <p>Настоящие Условия заключены между вами и {DEVELOPER}, а не Apple. Apple не обязана обеспечивать обслуживание и поддержку Приложения и не отвечает по претензиям, связанным с ним. Apple и её дочерние компании являются третьими выгодоприобретателями Условий и вправе принудительно применять их к вам.</p>
+        <h2>13. Применимое право и споры</h2>
+        <p>Условия регулируются законодательством Литовской Республики. Споры передаются в компетентные суды Литвы, за исключением случаев, когда обязательные нормы защиты потребителей вашей страны дают вам право обращаться в суд по месту жительства или предоставляют дополнительные права.</p>
+        <h2>14. Контакты</h2>
+        <p>Поддержка и уведомления: <a href={`mailto:${CONTACT_EMAIL}`}>{CONTACT_EMAIL}</a>.</p>
+      </div>
+    </div>
+  </article>
+</Layout>
