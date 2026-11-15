@@ -1,16 +1,16 @@
 ---
 import PhoneMockup from './PhoneMockup.astro';
 const steps = [
-  { n: '1', en: ['Start', 'Check GPS, pick Walk, Hike or Run, and tap start.'], ru: ['Старт', 'Проверьте GPS, выберите Прогулка, Поход или Бег и нажмите старт.'] },
-  { n: '2', en: ['Walk', 'Keep the phone in your pocket. Catographer draws the line.'], ru: ['Идите', 'Держите телефон в кармане. Catographer рисует линию.'] },
-  { n: '3', en: ['Remember', 'Add photos, a mood and a note. Your diary and map grow.'], ru: ['Запомните', 'Добавьте фото, настроение и заметку. Дневник и карта растут.'] },
+  { n: '1', en: ['Start', 'Pick Walk, Hike or Run and hit start when GPS is ready.'], ru: ['Старт', 'Выберите Прогулка, Поход или Бег и жмите старт, когда GPS готов.'] },
+  { n: '2', en: ['Walk', 'Pocket the phone. The line draws itself as you move.'], ru: ['Идите', 'Уберите телефон в карман. Линия рисуется сама, пока вы идёте.'] },
+  { n: '3', en: ['Keep it', 'Add a photo, mood or note. That walk lands in the diary and on the map.'], ru: ['Оставьте', 'Добавьте фото, настроение или заметку. Прогулка попадает в дневник и на карту.'] },
 ];
 ---
 <section class="px-4 py-16">
   <div class="mx-auto max-w-5xl grid md:grid-cols-2 gap-12 items-center">
     <PhoneMockup variant="diary" />
     <div>
-      <h2 class="text-3xl md:text-4xl font-semibold"><span data-lang-en>Three taps to a memory</span><span data-lang-ru>Три касания до воспоминания</span></h2>
+      <h2 class="text-3xl md:text-4xl font-semibold"><span data-lang-en>From a walk to a map entry</span><span data-lang-ru>От прогулки до записи на карте</span></h2>
       <ol class="mt-8 space-y-6">
         {steps.map((s) => (
           <li class="flex gap-4" data-reveal>

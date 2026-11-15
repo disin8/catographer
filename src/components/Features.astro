@@ -1,17 +1,17 @@
 ---
 import Icon from './Icon.astro';
 const items = [
-  { icon: 'map', en: ['Live recording, made easy', 'A clear start screen with GPS signal, Walk / Hike / Run and a 3-2-1 countdown. Auto-pause and a battery saver keep long walks smooth.'], ru: ['Запись без хлопот', 'Понятный экран старта: сигнал GPS, Прогулка / Поход / Бег и отсчёт 3-2-1. Автопауза и экономия заряда для долгих маршрутов.'] },
-  { icon: 'image', en: ['Photos & moments on the route', 'Pin photos, notes, mood and tags exactly where they happened, then share a clean card or poster.'], ru: ['Фото и моменты на маршруте', 'Закрепляйте фото, заметки, настроение и теги там, где всё случилось, и делитесь аккуратной карточкой или постером.'] },
-  { icon: 'earth', en: ['Your month and year map', 'See every route on one map, explored areas and neighbourhood coverage, plus a year poster.'], ru: ['Карта месяца и года', 'Все маршруты на одной карте, исследованные районы и охват кварталов, плюс постер года.'] },
-  { icon: 'compass', en: ['Places & search', 'Find a walk by word, period or area. Frequent stops and return routes are noticed for you.'], ru: ['Места и поиск', 'Находите прогулки по слову, периоду или району. Частые остановки и возвраты замечаются автоматически.'] },
-  { icon: 'bolt', en: ['Watch, Live Activity & Siri', 'Record from Apple Watch, follow along in the Dynamic Island, and say “Start a walk” to Siri.'], ru: ['Watch, Live Activity и Siri', 'Записывайте с Apple Watch, следите в Dynamic Island и скажите Siri «Начать прогулку».'] },
-  { icon: 'shield-check', en: ['Apple Health, your way', 'Save walks as workouts with routes and import existing ones. No steps or energy are written.'], ru: ['Apple Health на ваших условиях', 'Сохраняйте прогулки как тренировки с маршрутом и импортируйте существующие. Шаги и энергия не записываются.'] },
+  { icon: 'map', en: ['Record the route', 'Start Walk, Hike or Run and keep walking. Catographer tracks GPS, pauses when you stop, and saves battery on long days out.'], ru: ['Запись маршрута', 'Выберите Прогулка, Поход или Бег и идите. Catographer пишет GPS, ставит паузу на остановках и бережёт батарею в долгих выходах.'] },
+  { icon: 'image', en: ['Moments on the line', 'Drop a photo, note, mood or tag on the exact spot. Share the walk later as a card or a poster.'], ru: ['Моменты на линии', 'Фото, заметка, настроение или тег прямо в точке на маршруте. Потом прогулку можно отправить карточкой или постером.'] },
+  { icon: 'earth', en: ['A map of where you have been', 'Month and year views stack every route, show explored neighbourhoods, and make a year poster you can keep.'], ru: ['Карта мест, где вы были', 'Вид за месяц и за год собирает все маршруты, показывает обойдённые районы и собирает годовой постер.'] },
+  { icon: 'compass', en: ['Find any past walk', 'Search by word, date range or area. Catographer also marks the stops and loops you repeat.'], ru: ['Найти любую прошлую прогулку', 'Поиск по слову, датам или району. Частые остановки и любимые петли отмечаются сами.'] },
+  { icon: 'bolt', en: ['Phone, Watch or Siri', 'Start from the iPhone, Apple Watch or Dynamic Island. Or say "Start a walk" to Siri.'], ru: ['Телефон, Watch или Siri', 'Старт с iPhone, Apple Watch или Dynamic Island. Или скажите Siri: «Начать прогулку».'] },
+  { icon: 'shield-check', en: ['Optional Apple Health', 'Export a walk as a workout with the route, or import ones you already logged.'], ru: ['Apple Health по желанию', 'Экспорт прогулки как тренировки с маршрутом или импорт уже записанных.'] },
 ];
 ---
 <section id="features" class="px-4 py-16">
   <div class="mx-auto max-w-5xl">
-    <h2 class="text-3xl md:text-4xl font-semibold text-center"><span data-lang-en>Made for remembering, not ranking</span><span data-lang-ru>Чтобы помнить, а не соревноваться</span></h2>
+    <h2 class="text-3xl md:text-4xl font-semibold text-center"><span data-lang-en>What Catographer does with a walk</span><span data-lang-ru>Что Catographer делает с прогулкой</span></h2>
     <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
       {items.map((i) => (
         <article class="cg-card lift p-6" data-reveal>

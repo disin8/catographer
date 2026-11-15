@@ -2,10 +2,10 @@
 import Layout from '../layouts/Layout.astro';
 import { url } from '../config';
 ---
-<Layout title="Page not found — Catographer" noindex path="404.html">
+<Layout title="Page not found: Catographer" noindex path="404.html">
   <section class="px-4 py-32 text-center">
     <h1 class="text-5xl font-semibold"><span data-lang-en>Off the map</span><span data-lang-ru>За пределами карты</span></h1>
-    <p class="mt-4 text-[var(--ink-soft)]"><span data-lang-en>This page doesn’t exist.</span><span data-lang-ru>Такой страницы нет.</span></p>
+    <p class="mt-4 text-[var(--ink-soft)]"><span data-lang-en>That link does not go anywhere.</span><span data-lang-ru>Эта ссылка никуда не ведёт.</span></p>
     <a href={url()} class="cg-btn mt-8"><span data-lang-en>Back to home</span><span data-lang-ru>На главную</span></a>
   </section>
 </Layout>
