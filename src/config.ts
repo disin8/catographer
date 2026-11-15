@@ -2,7 +2,8 @@ export const SITE = 'https://disin8.github.io';
 export const BASE = '/catographer/';
 export const SITE_URL = `${SITE}${BASE}`;
 
-export const APP_STORE_URL: string | null = null;
+export const APP_STORE_URL: string | null =
+  'https://apps.apple.com/us/app/catographer/id6832323868';
 
 export const CONTACT_EMAIL = 'dmitry8.work@gmail.com';
 export const DEVELOPER = 'Dmitry Sinkevich';
